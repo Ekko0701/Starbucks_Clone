@@ -13,6 +13,13 @@
 		DC43507D286DD03400908577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC43507B286DD03400908577 /* Main.storyboard */; };
 		DC43507F286DD03400908577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC43507E286DD03400908577 /* Assets.xcassets */; };
 		DC435082286DD03400908577 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC435080286DD03400908577 /* LaunchScreen.storyboard */; };
+		DC43508C286DD14100908577 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43508B286DD14100908577 /* HomeViewController.swift */; };
+		DC435093286DD1BF00908577 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC435092286DD1BF00908577 /* PayViewController.swift */; };
+		DC435095286DD1F100908577 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC435094286DD1F100908577 /* CommonViewController.swift */; };
+		DC435097286DD52A00908577 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC435096286DD52A00908577 /* OrderViewController.swift */; };
+		DC435099286DD59900908577 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC435098286DD59900908577 /* GiftViewController.swift */; };
+		DC43509B286DD5D100908577 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43509A286DD5D100908577 /* OtherViewController.swift */; };
+		DC43509F286DDC4C00908577 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43509E286DDC4C00908577 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		DC43507E286DD03400908577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC435081286DD03400908577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC435083286DD03400908577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC43508B286DD14100908577 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DC435092286DD1BF00908577 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		DC435094286DD1F100908577 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		DC435096286DD52A00908577 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		DC435098286DD59900908577 /* GiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
+		DC43509A286DD5D100908577 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		DC43509E286DDC4C00908577 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,78 @@
 		DC435074286DD03400908577 /* Starbucks_Clone */ = {
 			isa = PBXGroup;
 			children = (
+				DC435089286DD0A700908577 /* Common */,
+				DC43508A286DD0D500908577 /* View */,
 				DC435075286DD03400908577 /* AppDelegate.swift */,
 				DC435077286DD03400908577 /* SceneDelegate.swift */,
 				DC435079286DD03400908577 /* ViewController.swift */,
 				DC43507B286DD03400908577 /* Main.storyboard */,
+			);
+			path = Starbucks_Clone;
+			sourceTree = "<group>";
+		};
+		DC435089286DD0A700908577 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DC43509E286DDC4C00908577 /* Common.swift */,
 				DC43507E286DD03400908577 /* Assets.xcassets */,
 				DC435080286DD03400908577 /* LaunchScreen.storyboard */,
 				DC435083286DD03400908577 /* Info.plist */,
 			);
-			path = Starbucks_Clone;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DC43508A286DD0D500908577 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC435094286DD1F100908577 /* CommonViewController.swift */,
+				DC43508D286DD14E00908577 /* Home */,
+				DC43508E286DD15800908577 /* Pay */,
+				DC43508F286DD15D00908577 /* Order */,
+				DC435090286DD16200908577 /* Gift */,
+				DC435091286DD16B00908577 /* Other */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DC43508D286DD14E00908577 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DC43508B286DD14100908577 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DC43508E286DD15800908577 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				DC435092286DD1BF00908577 /* PayViewController.swift */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		DC43508F286DD15D00908577 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				DC435096286DD52A00908577 /* OrderViewController.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		DC435090286DD16200908577 /* Gift */ = {
+			isa = PBXGroup;
+			children = (
+				DC435098286DD59900908577 /* GiftViewController.swift */,
+			);
+			path = Gift;
+			sourceTree = "<group>";
+		};
+		DC435091286DD16B00908577 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DC43509A286DD5D100908577 /* OtherViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +216,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC43507A286DD03400908577 /* ViewController.swift in Sources */,
+				DC43509B286DD5D100908577 /* OtherViewController.swift in Sources */,
+				DC435093286DD1BF00908577 /* PayViewController.swift in Sources */,
+				DC43509F286DDC4C00908577 /* Common.swift in Sources */,
 				DC435076286DD03400908577 /* AppDelegate.swift in Sources */,
+				DC435097286DD52A00908577 /* OrderViewController.swift in Sources */,
+				DC435099286DD59900908577 /* GiftViewController.swift in Sources */,
+				DC435095286DD1F100908577 /* CommonViewController.swift in Sources */,
 				DC435078286DD03400908577 /* SceneDelegate.swift in Sources */,
+				DC43508C286DD14100908577 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +376,6 @@
 				INFOPLIST_FILE = Starbucks_Clone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +403,6 @@
 				INFOPLIST_FILE = Starbucks_Clone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
