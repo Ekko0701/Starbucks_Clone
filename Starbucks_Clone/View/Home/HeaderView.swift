@@ -35,7 +35,7 @@ class HeaderView: UIView {
 extension HeaderView {
     func style() {
         backgroundImage.image = UIImage(named: "headerBackground")
-        backgroundImage.contentMode = .scaleAspectFit
+        backgroundImage.contentMode = .scaleAspectFill
         
         welcomeLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         welcomeLabel.font = welcomeLabel.font.withSize(28)
@@ -105,6 +105,7 @@ extension HeaderView {
         
         backgroundImage.snp.makeConstraints { make in
             make.top.equalToSuperview()
+            make.bottom.leading.trailing.equalToSuperview()
         }
         
         welcomeLabel.snp.makeConstraints { make in
@@ -145,21 +146,18 @@ extension HeaderView {
         }
         
         messageButton.snp.makeConstraints { make in
-            make.top.equalTo(rewardProgressBar.snp.bottom).offset(16)
+            make.top.equalTo(rewardProgressBar.snp.bottom).offset(22)
             make.leading.equalToSuperview().offset(16)
         }
         
         couponButton.snp.makeConstraints { make in
-            make.top.equalTo(rewardProgressBar.snp.bottom).offset(16)
+            make.top.equalTo(rewardProgressBar.snp.bottom).offset(22)
             make.leading.equalTo(messageButton.snp.trailing).offset(16)
         }
         
         alaramButton.snp.makeConstraints { make in
-            make.top.equalTo(rewardProgressBar.snp.bottom).offset(16)
+            make.top.equalTo(rewardProgressBar.snp.bottom).offset(22)
             make.trailing.equalToSuperview().offset(-16)
         }
-        
-        
-        
     }
 }

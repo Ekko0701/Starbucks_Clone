@@ -56,7 +56,8 @@ extension HomeViewController {
         headerView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.trailing.leading.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(350)
+            make.height.equalTo(320)
+            
         }
         
         tableView.snp.makeConstraints { make in
