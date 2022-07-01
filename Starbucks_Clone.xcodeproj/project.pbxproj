@@ -20,6 +20,8 @@
 		DC435099286DD59900908577 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC435098286DD59900908577 /* GiftViewController.swift */; };
 		DC43509B286DD5D100908577 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43509A286DD5D100908577 /* OtherViewController.swift */; };
 		DC43509F286DDC4C00908577 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC43509E286DDC4C00908577 /* Common.swift */; };
+		DC4350A3286DEB0000908577 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC4350A2286DEB0000908577 /* SnapKit */; };
+		DC4350A9286DF1ED00908577 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4350A8286DF1ED00908577 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,7 @@
 		DC435098286DD59900908577 /* GiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		DC43509A286DD5D100908577 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		DC43509E286DDC4C00908577 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		DC4350A8286DF1ED00908577 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4350A3286DEB0000908577 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +111,7 @@
 		DC43508D286DD14E00908577 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DC4350A8286DF1ED00908577 /* HeaderView.swift */,
 				DC43508B286DD14100908577 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -160,6 +165,9 @@
 			dependencies = (
 			);
 			name = Starbucks_Clone;
+			packageProductDependencies = (
+				DC4350A2286DEB0000908577 /* SnapKit */,
+			);
 			productName = Starbucks_Clone;
 			productReference = DC435072286DD03400908577 /* Starbucks_Clone.app */;
 			productType = "com.apple.product-type.application";
@@ -188,6 +196,9 @@
 				Base,
 			);
 			mainGroup = DC435069286DD03400908577;
+			packageReferences = (
+				DC4350A1286DEB0000908577 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = DC435073286DD03400908577 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,6 +233,7 @@
 				DC435076286DD03400908577 /* AppDelegate.swift in Sources */,
 				DC435097286DD52A00908577 /* OrderViewController.swift in Sources */,
 				DC435099286DD59900908577 /* GiftViewController.swift in Sources */,
+				DC4350A9286DF1ED00908577 /* HeaderView.swift in Sources */,
 				DC435095286DD1F100908577 /* CommonViewController.swift in Sources */,
 				DC435078286DD03400908577 /* SceneDelegate.swift in Sources */,
 				DC43508C286DD14100908577 /* HomeViewController.swift in Sources */,
@@ -440,6 +452,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC4350A1286DEB0000908577 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC4350A2286DEB0000908577 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC4350A1286DEB0000908577 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC43506A286DD03400908577 /* Project object */;
 }
