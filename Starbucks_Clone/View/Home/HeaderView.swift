@@ -21,6 +21,8 @@ class HeaderView: UIView {
     let couponButton = UIButton()
     let alaramButton = UIButton()
     
+    let alphaView = UIView()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         style()

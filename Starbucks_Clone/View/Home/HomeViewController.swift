@@ -11,18 +11,12 @@ import SnapKit
 class HomeViewController: CommonViewController {
 
     let headerView = HeaderView()
-    var headerViewTopContraint: Constraint!
+    
+    let headerMaxHeight: CGFloat = 320
+    let headerMinHeight: CGFloat = 110
+    
+    var headerViewTopContraint: Constraint! // Top Constraint
     var headerViewHeightConstant: CGFloat = 320
-    var heightConstraint: Constraint!
-    
-    let maxHeight: CGFloat = 320
-    let minHeight: CGFloat = 320 - 210
-    
-    var preY: CGFloat = 0
-    var modifiedY: CGFloat = 0
-    
-    var testvar: CGFloat = 0
-    var scrollUp: Bool = false
     
     var tableView = UITableView()
     let cellId = "cellId"
@@ -72,7 +66,6 @@ extension HomeViewController {
         //AutoLayout with SnapKit
         headerView.snp.makeConstraints { make in
             headerViewTopContraint = make.top.equalToSuperview().constraint
-            //heightConstraint = make.height.equalTo(headerViewHeightConstant).constraint
             make.height.equalTo(headerViewHeightConstant)
             make.trailing.leading.equalTo(view.safeAreaLayoutGuide)
         }
@@ -95,15 +88,14 @@ extension HomeViewController: UITableViewDelegate {
         
         let remainY: CGFloat = headerViewHeightConstant - y
         
-        if remainY > maxHeight { //내리는 경우
-            //headerViewHeightConstant = maxHeight
+        if remainY > headerMaxHeight { //내리는 경우
             headerViewTopContraint.update(offset: 0) // 상단에 고정
-        } else if remainY < minHeight { // headerview 일정 부분 고정 // headerView 다 올라간 후
-            //headerViewHeightConstant = minHeight
-            headerViewTopContraint.update(offset: -210)
+        } else if remainY < headerMinHeight { // headerview 일정 부분 고정 // headerView 다 올라간 후
+            headerViewTopContraint.update(offset: -(headerMaxHeight - headerMinHeight))
         } else { // headerView 이동
             headerViewHeightConstant = remainY
-            headerViewTopContraint.update(offset: -(320 - remainY))
+            headerViewTopContraint.update(offset: -(headerMaxHeight - remainY))
+            
             scrollView.contentOffset.y = 0
         }
         
