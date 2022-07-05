@@ -12,15 +12,31 @@ class HomeViewController: CommonViewController {
 
     let headerView = HeaderView()
     var headerViewTopContraint: Constraint!
+    var headerViewHeightConstant: CGFloat = 320
+    var heightConstraint: Constraint!
+    
+    let maxHeight: CGFloat = 320
+    let minHeight: CGFloat = 320 - 210
+    
+    var preY: CGFloat = 0
+    var modifiedY: CGFloat = 0
+    
+    var testvar: CGFloat = 0
+    var scrollUp: Bool = false
     
     var tableView = UITableView()
     let cellId = "cellId"
-    let tiles = [
-        "Star balance",
-        "Bonus stars",
-        "Try these",
-        "Welcome back",
-        "Uplifting"
+    let testArray = [
+        "아메리카노",
+        "카페라떼",
+        "돌체라떼",
+        "아이스크림",
+        "샌드위치",
+        "아메리카노",
+        "카페라떼",
+        "돌체라떼",
+        "아이스크림",
+        "샌드위치",
     ]
     
     override func viewDidLoad() {
@@ -28,6 +44,7 @@ class HomeViewController: CommonViewController {
         style()
         layout()
         setupTableView()
+
     }
     
     override func commonInit() {
@@ -54,10 +71,10 @@ extension HomeViewController {
         
         //AutoLayout with SnapKit
         headerView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            headerViewTopContraint = make.top.equalToSuperview().constraint
+            //heightConstraint = make.height.equalTo(headerViewHeightConstant).constraint
+            make.height.equalTo(headerViewHeightConstant)
             make.trailing.leading.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(320)
-            
         }
         
         tableView.snp.makeConstraints { make in
@@ -71,17 +88,38 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+    //Animation
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
+        
+        let remainY: CGFloat = headerViewHeightConstant - y
+        
+        if remainY > maxHeight { //내리는 경우
+            //headerViewHeightConstant = maxHeight
+            headerViewTopContraint.update(offset: 0) // 상단에 고정
+        } else if remainY < minHeight { // headerview 일정 부분 고정 // headerView 다 올라간 후
+            //headerViewHeightConstant = minHeight
+            headerViewTopContraint.update(offset: -210)
+        } else { // headerView 이동
+            headerViewHeightConstant = remainY
+            headerViewTopContraint.update(offset: -(320 - remainY))
+            scrollView.contentOffset.y = 0
+        }
+        
+        
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tiles.count
+        return testArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
-        cell.textLabel?.text = tiles[indexPath.row]
+        cell.textLabel?.text = testArray[indexPath.row]
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
         return cell
