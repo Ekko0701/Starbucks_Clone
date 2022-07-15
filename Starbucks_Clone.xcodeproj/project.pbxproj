@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A26A12C2874895200B7E915 /* FrequencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26A12B2874895200B7E915 /* FrequencyView.swift */; };
 		DC435076286DD03400908577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC435075286DD03400908577 /* AppDelegate.swift */; };
 		DC435078286DD03400908577 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC435077286DD03400908577 /* SceneDelegate.swift */; };
 		DC43507A286DD03400908577 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC435079286DD03400908577 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A26A12B2874895200B7E915 /* FrequencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyView.swift; sourceTree = "<group>"; };
 		DC435072286DD03400908577 /* Starbucks_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starbucks_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC435075286DD03400908577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC435077286DD03400908577 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A26A127287488D500B7E915 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				DC4350A8286DF1ED00908577 /* HeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		6A26A128287488DE00B7E915 /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				6A26A12B2874895200B7E915 /* FrequencyView.swift */,
+			);
+			path = Element;
+			sourceTree = "<group>";
+		};
 		DC435069286DD03400908577 = {
 			isa = PBXGroup;
 			children = (
@@ -111,8 +129,9 @@
 		DC43508D286DD14E00908577 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DC4350A8286DF1ED00908577 /* HeaderView.swift */,
 				DC43508B286DD14100908577 /* HomeViewController.swift */,
+				6A26A127287488D500B7E915 /* Header */,
+				6A26A128287488DE00B7E915 /* Element */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -229,6 +248,7 @@
 				DC43507A286DD03400908577 /* ViewController.swift in Sources */,
 				DC43509B286DD5D100908577 /* OtherViewController.swift in Sources */,
 				DC435093286DD1BF00908577 /* PayViewController.swift in Sources */,
+				6A26A12C2874895200B7E915 /* FrequencyView.swift in Sources */,
 				DC43509F286DDC4C00908577 /* Common.swift in Sources */,
 				DC435076286DD03400908577 /* AppDelegate.swift in Sources */,
 				DC435097286DD52A00908577 /* OrderViewController.swift in Sources */,

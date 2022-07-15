@@ -8,6 +8,7 @@ import SnapKit
 
 class HeaderView: UIView {
     let backgroundImage = UIImageView()
+    let buttonBackgroundView = UIView()
     
     let welcomeLabel = UILabel()
     
@@ -21,7 +22,7 @@ class HeaderView: UIView {
     let couponButton = UIButton()
     let alaramButton = UIButton()
     
-    let alphaView = UIView()
+    let alphaView = UIView() // 투명도 조절 할 UIView()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -38,6 +39,8 @@ extension HeaderView {
     func style() {
         backgroundImage.image = UIImage(named: "headerBackground")
         backgroundImage.contentMode = .scaleAspectFill
+        
+        buttonBackgroundView.backgroundColor = .white
         
         welcomeLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         welcomeLabel.font = welcomeLabel.font.withSize(28)
@@ -89,18 +92,23 @@ extension HeaderView {
         alaramButton.imageView?.tintColor = .label
         alaramButton.imageView?.contentMode = .scaleAspectFit
         
-        
+        alphaView.backgroundColor = .white
+        alphaView.alpha = 0
         
     }
     
     func layout() {
         addSubview(backgroundImage)
+        addSubview(buttonBackgroundView)
+        
         addSubview(welcomeLabel)
         addSubview(rewardLabel)
         addSubview(rewardProgressBar)
         addSubview(currentStarLabel)
         addSubview(slashLabel)
         addSubview(maxStarLabel)
+        
+        addSubview(alphaView)
         addSubview(messageButton)
         addSubview(couponButton)
         addSubview(alaramButton)
@@ -109,6 +117,12 @@ extension HeaderView {
             make.top.equalToSuperview()
             make.bottom.leading.trailing.equalToSuperview()
         }
+        
+        buttonBackgroundView.snp.makeConstraints { make in
+            make.top.equalTo(rewardProgressBar.snp.bottom).offset(10)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+        
         
         welcomeLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
@@ -161,5 +175,29 @@ extension HeaderView {
             make.top.equalTo(rewardProgressBar.snp.bottom).offset(22)
             make.trailing.equalToSuperview().offset(-16)
         }
+        
+        alphaView.snp.makeConstraints { make in
+            make.top.bottom.leading.trailing.equalToSuperview()
+            //make.bottom.equalTo(messageButton.snp.top).offset(-20) // 수정 필요
+        }
+    }
+}
+
+extension UIView {
+    func setGradient(color1: UIColor, color2: UIColor) {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = bounds
+        let colors: [CGColor] = [
+           .init(red: 0, green: 0.9810667634, blue: 0.5736914277, alpha: 1),
+           .init(red: 0.5563425422, green: 0.9793455005, blue: 0, alpha: 1),
+           .init(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)
+        ]
+        gradient.colors = colors
+        //gradient.colors = [color1.cgColor, color2.cgColor]
+        gradient.locations = [0.0, 1.0]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
+        
+        layer.addSublayer(gradient)
     }
 }
